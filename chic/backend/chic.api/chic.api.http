@@ -1,0 +1,6 @@
+@chic.api_HostAddress = http://localhost:5003
+
+GET {{chic.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

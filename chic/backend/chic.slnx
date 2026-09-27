@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="chic.api/chic.api.csproj" />
+  <Project Path="chic.application/chic.application.csproj" />
+  <Project Path="chic.domain/chic.domain.csproj" />
+  <Project Path="chic.infrastructure/chic.infrastructure.csproj" />
+</Solution>
