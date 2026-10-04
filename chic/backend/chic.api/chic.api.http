@@ -1,6 +1,174 @@
-@chic.api_HostAddress = http://localhost:5003
+## chic.api/chic.api.http
+## @chic.api_HostAddress = http://localhost:5003
 
-GET {{chic.api_HostAddress}}/weatherforecast/
-Accept: application/json
+### ===== EMPRESAS =====
 
-###
+### Crear empresa (201)
+POST http://localhost:5003/api/empresas
+Content-Type: application/json
+
+{ "nombre": "Chic S.A.", "direccion": "Col. Palmira, Tegucigalpa", "telefono": "2222-3333" }
+
+### Listar empresas (200)
+GET http://localhost:5003/api/empresas
+
+### Empresa por id (200 / 404)
+GET http://localhost:5003/api/empresas/1
+
+### Actualizar empresa (204)
+PUT http://localhost:5003/api/empresas/2
+Content-Type: application/json
+
+{ "nombre": "Chic S.A. de C.V.", "direccion": "Col. Palmira, Tegucigalpa", "telefono": "2222-3333", "activa": true }
+
+### Empresa inexistente (404)
+GET http://localhost:5003/api/empresas/9999
+
+### ===== UBICACIONES =====
+
+### Crear ubicación (201)
+POST http://localhost:5003/api/ubicaciones
+Content-Type: application/json
+
+{ "nombre": "Sede central", "latitud": 14.0818, "longitud": -87.2068, "radioMetros": 100, "empresaId": 2 }
+
+### Listar ubicaciones (200)
+GET http://localhost:5003/api/ubicaciones
+
+### Ubicación por id (200 / 404)
+GET http://localhost:5003/api/ubicaciones/1
+
+### Actualizar ubicación (204)
+PUT http://localhost:5003/api/ubicaciones/1
+Content-Type: application/json
+
+{ "nombre": "Sede central", "latitud": 14.0818, "longitud": -87.2068, "radioMetros": 150 }
+
+### Latitud fuera de rango (400)
+POST http://localhost:5003/api/ubicaciones
+Content-Type: application/json
+
+{ "nombre": "Mala", "latitud": 200, "longitud": -87.2, "radioMetros": 100, "empresaId": 1 }
+
+### Empresa inexistente en el cuerpo (400)
+POST http://localhost:5003/api/ubicaciones
+Content-Type: application/json
+
+{ "nombre": "Huérfana", "latitud": 14.08, "longitud": -87.2, "radioMetros": 100, "empresaId": 9999 }
+
+### ===== USUARIOS =====
+
+### Crear usuario (201)
+POST http://localhost:5003/api/usuarios
+Content-Type: application/json
+
+{ "nombre": "Wewo", "apellido": "Pedo", "correo": "wewo@chic.com", "telefono": "9999-0000", "cargo": "Diseñador", "empresaId": 2 }
+
+### Correo repetido (409)
+POST http://localhost:5003/api/usuarios
+Content-Type: application/json
+
+{ "nombre": "Wewo", "apellido": "Pedo", "correo": "wewo@chic.com", "empresaId": 1 }
+
+### Listar usuarios (200)
+GET http://localhost:5003/api/usuarios
+
+### Usuario por id (200 / 404)
+GET http://localhost:5003/api/usuarios/3
+
+### Actualizar usuario (204)
+PUT http://localhost:5003/api/usuarios/3
+Content-Type: application/json
+
+{ "nombre": "Ana María", "apellido": "López", "correo": "ana@chic.com", "telefono": "9999-0000", "cargo": "Directora", "activo": true, "empresaId": 1 }
+
+### Correo inválido (400)
+POST http://localhost:5003/api/usuarios
+Content-Type: application/json
+
+{ "nombre": "X", "apellido": "Y", "correo": "no-es-correo", "empresaId": 1 }
+
+### ===== ELIMINACIÓN =====
+
+### Empresa con dependencias (409)
+DELETE http://localhost:5003/api/empresas/1
+
+### Eliminar usuario (204)
+DELETE http://localhost:5003/api/usuarios/3
+
+### Eliminar ubicación (204)
+DELETE http://localhost:5003/api/ubicaciones/1
+
+### eliminar empresa (204)
+DELETE http://localhost:5003/api/empresas/1
+
+### ===== ASISTENCIAS =====
+
+### 1. Entrada dentro del radio, ~15 m de la sede (201)
+POST http://localhost:5003/api/asistencias
+Content-Type: application/json
+
+{ "usuarioId": 4, "tipo": "Entrada", "latitud": 14.0819, "longitud": -87.2069 }
+
+### 2. Entrada repetida (409)
+POST http://localhost:5003/api/asistencias
+Content-Type: application/json
+
+{ "usuarioId": 4, "tipo": "Entrada", "latitud": 14.0819, "longitud": -87.2069 }
+
+### 3. Salida fuera del radio, ~2 km de la sede (422)
+POST http://localhost:5003/api/asistencias
+Content-Type: application/json
+
+{ "usuarioId": 4, "tipo": "Salida", "latitud": 14.1000, "longitud": -87.2000 }
+
+### 4. Salida dentro del radio (201)
+POST http://localhost:5003/api/asistencias
+Content-Type: application/json
+
+{ "usuarioId": 4, "tipo": "Salida", "latitud": 14.0818, "longitud": -87.2068 }
+
+### 5. Usuario inexistente (400)
+POST http://localhost:5003/api/asistencias
+Content-Type: application/json
+
+{ "usuarioId": 9999, "tipo": "Entrada", "latitud": 14.0818, "longitud": -87.2068 }
+
+### 6. Tipo inválido (400)
+POST http://localhost:5003/api/asistencias
+Content-Type: application/json
+
+{ "usuarioId": 4, "tipo": "Almuerzo", "latitud": 14.0818, "longitud": -87.2068 }
+
+### 7. Latitud fuera de rango (400)
+POST http://localhost:5003/api/asistencias
+Content-Type: application/json
+
+{ "usuarioId": 4, "tipo": "Entrada", "latitud": 200, "longitud": -87.2068 }
+
+### 8. Listar todas (200)
+GET http://localhost:5003/api/asistencias
+
+### 9. Filtrar por usuario (200)
+GET http://localhost:5003/api/asistencias?usuarioId=4
+
+### 10. Por id (200 / 404)
+GET http://localhost:5003/api/asistencias/1
+
+### 11. Asistencia inexistente (404)
+GET http://localhost:5003/api/asistencias/9999
+
+### 12. Corregir una asistencia (204)
+PUT http://localhost:5003/api/asistencias/1
+Content-Type: application/json
+
+{ "tipo": "Entrada", "observacion": "Corrección administrativa" }
+
+### 13. Usuario con asistencias (409)
+DELETE http://localhost:5003/api/usuarios/4
+
+### 14. Ubicación con asistencias (409)
+DELETE http://localhost:5003/api/ubicaciones/2
+
+### 15. Eliminar asistencia (204)
+DELETE http://localhost:5003/api/asistencias/1

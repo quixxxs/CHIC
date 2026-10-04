@@ -1,0 +1,12 @@
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\bin\Debug\net10.0\chic.domain.deps.json
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\bin\Debug\net10.0\chic.domain.dll
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\bin\Debug\net10.0\chic.domain.pdb
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\chic.domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\chic.domain.AssemblyInfoInputs.cache
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\chic.domain.AssemblyInfo.cs
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\chic.domain.csproj.CoreCompileInputs.cache
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\chic.domain.sourcelink.json
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\chic.domain.dll
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\refint\chic.domain.dll
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\chic.domain.pdb
+C:\Users\Quixs\OneDrive\Desktop\2026\expertos\chic\backend\chic.domain\obj\Debug\net10.0\ref\chic.domain.dll

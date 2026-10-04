@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "W7KYn/bxWxA=",
+  "dgSpecHash": "Ig3celC+3m4=",
   "success": true,
   "projectFilePath": "C:\\Users\\Quixs\\OneDrive\\Desktop\\2026\\expertos\\chic\\backend\\chic.application\\chic.application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Quixs\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Quixs\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
+    "C:\\Users\\Quixs\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

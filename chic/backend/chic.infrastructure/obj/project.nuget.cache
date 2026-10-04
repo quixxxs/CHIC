@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DBy4J+MH/Ao=",
+  "dgSpecHash": "/cmIa4diX5o=",
   "success": true,
   "projectFilePath": "C:\\Users\\Quixs\\OneDrive\\Desktop\\2026\\expertos\\chic\\backend\\chic.infrastructure\\chic.infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Quixs\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Quixs\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "C:\\Users\\Quixs\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Quixs\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
     "C:\\Users\\Quixs\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.11.0\\microsoft.codeanalysis.analyzers.3.11.0.nupkg.sha512",
